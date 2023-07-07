@@ -1,0 +1,87 @@
+.service-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+  }
+  
+  .row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px; /* Add margin-bottom to create space between rows */
+    /*flex-wrap: wrap; Wrap items onto new lines */
+  }
+  
+  .rectangle {
+    flex: 1 1 calc(30.33% - 15px); /* Adjust the width of each column */
+    height: 200px;
+    background-color: #eaeaea;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    margin-right: 30px; 
+   margin-bottom: 20px;/* Add margin-bottom to create space between columns */
+  }
+  .rectangle:last-child {
+    margin-right: 0; /* Remove margin-right for the last column in each row */
+  }
+  @media screen and (max-width: 768px) {
+    .rectangle {
+      flex: 1 0 calc(50% - 20px); /* Adjust the width for smaller screens */
+    }
+  }
+  .rectangle h2 {
+    color: #333;
+  }
+  
+  .rectangle p {
+    color: #666;
+  }
+  .rectangle:hover h2 {
+    color: #ff0000; /* Change the color to your desired hover color */
+  }
+  
+  .circle {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background-color: #eaeaea;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+  }
+  
+  .icon {
+    color: #ff0000; /* Change the icon color to your desired color */
+    font-size: 40px;
+  }
+  .PC {
+    width: 150px; /* Set the desired width for the image */
+    height: 7px; /* Let the height adjust proportionally */
+    filter: blur(3px);
+  }
+  
+  .image-container {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .image-text {
+    position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.3s;
+  }
+  .image-text h1 {
+    font-size: 50px;
+    font-weight: bold;
+    color: white;
+  }
+  
+  .image-text:hover {
+    transform: translate(-50%, -50%) scale(1.2); /* Make the text bigger on hover */
+  }
