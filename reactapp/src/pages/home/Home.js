@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/img-redundant-alt */
 import React from 'react';
-import { FaTools, FaWrench, FaCogs, FaTint, FaClipboardCheck, FaExclamationTriangle } from 'react-icons/fa';
+//import { FaTools, FaWrench, FaCogs, FaTint, FaClipboardCheck, FaExclamationTriangle } from 'react-icons/fa'; (uncomment)
 import '../../css/home.css'; // Import the CSS file for styling
 import PC from './PC.jpg';
 import PC1 from './pc1.png';
