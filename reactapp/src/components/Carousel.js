@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-//import PropTypes from 'prop-types';(uncomment it)
+import PropTypes from 'prop-types';
 import '../css/Carousel.css';
 
 const Carousel = ({ images }) => {
