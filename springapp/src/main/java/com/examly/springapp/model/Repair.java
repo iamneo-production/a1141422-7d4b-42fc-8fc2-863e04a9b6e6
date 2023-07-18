@@ -1,3 +1,4 @@
+
 package com.examly.springapp.model;
 import javax.persistence.*;
 import lombok.AllArgsConstructor;
@@ -6,6 +7,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import java.util.ArrayList;
 import java.util.List;
+
 @Getter
 @Setter
 @NoArgsConstructor
@@ -30,4 +32,5 @@ public class Repair {
     private String des;
     @Column(name="status")
     private String status;
+
 }
