@@ -1,4 +1,4 @@
-package com.examly.springapp.Service;
+package com.examly.springapp.service;
 import com.examly.springapp.exception.ResourceNotFoundException;
 import com.examly.springapp.model.Repair;
 import com.examly.springapp.model.Customer;
