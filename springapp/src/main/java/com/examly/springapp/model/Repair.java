@@ -25,3 +25,4 @@ public class Repair {
 
     @OneToMany
     private List<Device> device=new ArrayList<>();
+}
