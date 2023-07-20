@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import '../css/footer.css';
-//import { SocialIcon } from 'react-social-icons';  (uncomment it)
+import { SocialIcon } from 'react-social-icons';  
 
 const FooterComponent = () => {
   const [isExpanded, setIsExpanded] = useState(false);
