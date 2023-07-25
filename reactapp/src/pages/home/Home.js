@@ -56,7 +56,67 @@ const Home = () => {
         </div>
       </div>
       </div>
-      
+      <div id='testimonials'>
+      <div className='container'>
+        <div className='section-title text-center'>
+          <h1>What our clients say</h1>
+          
+        </div>
+        <div className='row'>
+          {data
+            ? data.Testimonials.map((d, i) => (
+                <div key={`${d.name}-${i}`} className='col-md-4'>
+                  <div className='testimonial'>
+                    <div className='testimonial-image'>                    
+                      <img src={d.img} alt='img' />
+                    </div>
+                    <div className='testimonial-content'>
+                      <p>"{d.text}"</p>
+                      <div className='testimonial-meta'> - {d.name} </div>
+                    </div>
+                  </div>
+                </div>
+                
+              ))
+            : 'loading'}
+        </div>
+      </div>
+    </div>
+    <div className="company-metrices">
+        <div className="row1">
+        <div className="rectangle1">
+          <FaTools className="icon1" />
+          <h1>350</h1>
+          <h3>Repairs Daily</h3>
+        </div>
+        <div className="rectangle1">
+          <BsFillPeopleFill className="icon1" />
+          <h1>95%</h1>
+          <h3>Happy Customers</h3>
+        </div>
+        <div className="rectangle1">
+          <FaUserTie className="icon1" />
+          <h1>100+</h1>
+          <h3>Active Employees</h3>
+        </div>
+        </div>
+        </div>
+    <div id='about'>
+      <div className='container'>
+        <div className='row'>
+          <div className='col-xs-12 col-md-6'>
+            <img src={AboutUs} className='img-responsive' alt='' />
+          </div>
+          <div className='col-xs-12 col-md-6'>
+            <div className='about-text'>
+              <h1>About Us</h1>
+              <br />
+              <p>{data.About ? data.About.paragraph : 'loading...'}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
     </div>
   );
 };
