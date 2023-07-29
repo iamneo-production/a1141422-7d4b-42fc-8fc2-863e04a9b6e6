@@ -1,18 +1,22 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import '../css/footer.css';
-//import { SocialIcon } from 'react-social-icons';  (uncomment it)
+import { SocialIcon } from 'react-social-icons';  
+
 
 const FooterComponent = () => {
   const [isExpanded, setIsExpanded] = useState(false);
+
 
   const handleFooterHover = () => {
     setIsExpanded(true);
   };
 
+
   const handleFooterLeave = () => {
     setIsExpanded(false);
   };
+
 
   return (
     <div>
@@ -29,6 +33,7 @@ const FooterComponent = () => {
               </div>
             </div>
 
+
             <div className='col-12 col-md-2 col-xl-2 col-lg-2'>
               <div className='about_footer'>
                 <h3 className='text-black'>Quick Links</h3>
@@ -42,35 +47,42 @@ const FooterComponent = () => {
               </div>
             </div>
 
+
             <div className='col-12 col-md-2 col-xl-2 col-lg-2'>
               <div className='about_footer'>
                 <h3 className='text-black'>Follow Us</h3>
                 <hr className='bg-black'></hr>
                 <ul>
+
+
                   <li><SocialIcon url="https://twitter.com" /></li><br></br>
                   <li><SocialIcon url="https://facebook.com" /></li><br></br>
                   <li><SocialIcon url="https://youtube.com" /></li><br></br>
                   <li><SocialIcon url="https://whatsapp.com" /></li><br></br>
+                               
                 </ul>
               </div>
             </div>
+
 
             <div className='col-12 col-md-4 col-xl-4 col-lg-4'>
               <div className='about_footer'>
                 <h3 className='text-black'>Contact Us</h3>
                 <hr className='bg-black'></hr>
                 <span>Address : -</span> <span>Navalur,Chennai</span><br></br>
-                <a href="tel:+9330379535 tel:+669875"><i className='fas fa-phone'></i> +91-9330379535   <i className='fas fa-phone'></i> +91-9749002205 </a><br></br>
+                <a href="tel:+9150222132 tel:+669875"><i className='fas fa-phone'></i> +91-9330379535   <i className='fas fa-phone'></i> +91-9749002205 </a><br></br>
                 
                 <a href="#"><i className='fas fa-envelope'></i>  prasanahsuresh14@gmail.com <br/><i className='fas fa-envelope'></i>  javareactteam@gmail.com</a>
 
               </div>
+
               <div className='mt-1 mr-5'>
                 <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d26081.137909197547!2d88.43282685235556!3d22.574256955373254!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1656678985189!5m2!1sen!2sin" width="100%" height="150px" style={{ border: '0px' }} allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
               </div>
             </div>
           </div>
           <hr className='bg-black'></hr>
+
 
           <div className='row'>
             <div className='col-12'>

@@ -1,3 +1,4 @@
+
 package com.examly.springapp.model;
 import javax.persistence.*;
 import lombok.AllArgsConstructor;
@@ -25,4 +26,10 @@ public class Repair {
 
     @OneToMany
     private List<Device> device=new ArrayList<>();
+
+    @Column(name = "description")
+    private String des;
+    @Column(name="status")
+    private String status;
+
 }
