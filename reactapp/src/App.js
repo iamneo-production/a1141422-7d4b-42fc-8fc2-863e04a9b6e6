@@ -40,7 +40,7 @@ import AddCustomerComponent from './components/AddCustomerComponent';
 import ListCustomerComponent from './components/ListCustomerComponent';
 import ListDeviceComponent from './components/ListDeviceComponent';
 import AddDeviceComponent from './components/AddDeviceComponent';
-
+import ListEmployeeRepair from './components/ListEmployeeRepair';
 function App() {
   return (
    <div>
@@ -64,7 +64,7 @@ function App() {
       <Route path = "/devices" element = {<ListDeviceComponent/>}></Route>
       <Route path = "/add-device" element = {<AddDeviceComponent/>} ></Route>
       <Route path="/edit-device/:id" element={<AddDeviceComponent/>}></Route>
-      
+      <Route path="/employee-repairs" element={<ListEmployeeRepair/>}/> 
       </Routes>
     
  

@@ -11,9 +11,9 @@ export default props => {
         Customer
       </Link>
 
-      <a className="menu-item" href="/">
+      <Link className="menu-item" to="/employee-repairs">
         Employee
-      </a>
+      </Link>
 
       <Link className="menu-item" to={`/admin`}>
         Service provider(Admin)

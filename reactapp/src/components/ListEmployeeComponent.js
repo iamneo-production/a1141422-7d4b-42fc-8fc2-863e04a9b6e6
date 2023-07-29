@@ -1,12 +1,19 @@
 import React, { useEffect, useState } from 'react'
+import EmployeeRepairMappingService from '../services/EmployeeRepairMappingService';
 import EmployeeService from '../services/EmployeeService'
+import RepairService from '../services/RepairService';
 import { Link } from 'react-router-dom'
 
 
 const ListEmployeeComponent = () => {
     const [employees,setEmployees]=useState([])
+    const [selectedRepairIds, setSelectedRepairIds] = useState({});
+  const [repairIds, setRepairIds] = useState([]);
+  const navigate = useNavigate();
+
     useEffect(()=>{
       getAllEmployees();
+      fetchRepairIds();
     },[])
     const getAllEmployees=()=>{
         EmployeeService.getAllEmployees().then((response)=>{
@@ -48,6 +55,31 @@ const ListEmployeeComponent = () => {
         setQuery('');
         setEmployees(filterdata);
       };
+      const fetchRepairIds = () => {
+        RepairService.getAllRepairs()
+          .then((response) => {
+            const repairIds = response.data.map((repair) => repair.id);
+            setRepairIds(repairIds);
+            // Now that we have the repairIds, we can fetch employee-repair mappings and populate selectedRepairIds state
+            EmployeeRepairMappingService.getAllEmployeeMappings()
+              .then((response) => {
+                console.log('Employee-repair mappings response:', response.data);
+                const mappingData = response.data;
+                const selectedRepairIds = {};
+                mappingData.forEach((mapping) => {
+                  selectedRepairIds[mapping.employeeId] = mapping.repairId;
+                });
+                setSelectedRepairIds(selectedRepairIds);
+                // Update the selectedRepairIds state with fetched data
+              })
+              .catch((error) => {
+                console.log('Error fetching employee-repair mappings:', error);
+              });
+          })
+          .catch((error) => {
+            console.log('Error fetching repair IDs:', error);
+          });
+      };
   return (
     <div className='container'>
       <h2 className="text-center">Employee Management</h2>
@@ -88,17 +120,19 @@ const ListEmployeeComponent = () => {
         </React.Fragment>
         <table className="table table-bordered table-striped">
             <thead>
+            <tr>
                 <th>Employee Id</th>
                 <th>Employee Name</th>
                 <th>Employee EmailId</th>
                 <th>Employee PhoneNumber</th>
                 <th>Active Status</th>
                 <th>Actions</th>
+                <th>Repair ID</th>
+                </tr>
             </thead>
             <tbody>
                 {
-                    employees.map(
-                        employee=>
+                    employees.map(employee=>(
                         <tr key={employee.id}>
                             <td>{employee.id}</td>
                             <td>{employee.name}</td>
@@ -107,9 +141,13 @@ const ListEmployeeComponent = () => {
                             <td>{employee.act}</td>
                             <td>
                                 <Link className='btn btn-info' to={`/edit-employee/${employee.id}`}>Update</Link>
-                                <button className = 'btn btn-danger' onClick ={()=>deleteEmployee(employee.id)} style = {{marginLeft:"30px"}}> Delete</button></td>
+                                <button className = 'btn btn-danger' onClick ={()=>deleteEmployee(employee.id)} style = {{marginLeft:"30px"}}> Delete</button>
+                                </td>
+                                <td>
+                              <Link to={`/assign-repair-id/${employee.id}`}>Select</Link>
+                               </td>
                         </tr>
-                    )
+                    ))
                 }
             </tbody>
         </table>
