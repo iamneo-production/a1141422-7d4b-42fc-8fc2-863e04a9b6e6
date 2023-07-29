@@ -33,3 +33,31 @@ label{
 
 }
 
+.input-field{
+
+    margin: 0.5rem 0;
+    padding: 1rem;
+    border-style: solid;
+    border-color: rgb(83, 153, 214);
+    border-radius: 10px;
+    width: 50;
+
+}
+
+.Link-btn{
+
+    background: none;
+    color: rgb(0, 137, 155);
+    text-decoration: underline;
+    border: none;
+
+}
+.main-button{
+
+    border: none;
+    background-color: rgb(83, 153, 214);
+    padding: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    
+}
