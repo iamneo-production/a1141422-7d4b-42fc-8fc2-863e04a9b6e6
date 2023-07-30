@@ -90,8 +90,8 @@ function Login() {
               onClick={login}>Login
             </button>
         </form>
-        <button className="Link-btn" onClick={()=>navigate('/register')}>Don't have account? Register here
-        </button>
+        <button className="Link-btn" onClick={()=>navigate('/add-customer')}>Don't have account? Register here(2 step registration)</button>
+       
       </div>
       </div>
     );

@@ -13,7 +13,7 @@ const CustomerSatisfactionChart = () => {
   ];
 
   return (
-    <div className="App">
+    <div className="App1">
 
       <h1>Customer Satisfaction</h1>
 
