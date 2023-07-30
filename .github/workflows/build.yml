@@ -22,7 +22,7 @@ jobs:
           java-version: 11
       - name: Build and analyze
         env:
-          GITHUB_TOKEN: a1141422-7d4b-42fc-8fc2-863e04a9b6e6
+          GITHUB_TOKEN: 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
           SONAR_TOKEN: 811c9a490983734401ba4e491eaefc8bfa7281de
         run: >-
           mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar
