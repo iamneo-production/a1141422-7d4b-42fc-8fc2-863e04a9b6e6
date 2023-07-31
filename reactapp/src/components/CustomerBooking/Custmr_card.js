@@ -17,7 +17,7 @@ function Custmr_card() {
   }, [id]);
   const fetchCustomerData = async (id) => {
     try {
-      const response = await axios.get(`http://localhost:8080/customers/${id}`);
+      const response = await axios.get(`https://8080-bfdeafdeafbfdbaeeabfcdcbbdbeaabbeaeaadbdbabf.project.examly.io/customers/${id}`);
       setCustomerName(response.data.name);
       setCustomerId(response.data.id);
     } catch (error) {

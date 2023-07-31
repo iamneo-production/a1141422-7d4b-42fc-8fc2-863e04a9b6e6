@@ -9,7 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@CrossOrigin("*")
+@CrossOrigin("https://8081-bfdeafdeafbfdbaeeabfcdcbbdbeaabbeaeaadbdbabf.project.examly.io")
 @RequestMapping("api/v1/custmlogin")
 public class CustmController {
 
