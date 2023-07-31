@@ -33,7 +33,7 @@ const ListCustomerComponent = () => {
     
      const [filterdata, setFilterdata]= useState([]);
      const [query, setQuery] = useState('');
-    
+     const [selectedSearchCriteria, setSelectedSearchCriteria] = useState('name');
       const handlesearch=(event)=>{
         const getSearch= event.target.value; 
         if(getSearch.length > 0)
@@ -45,10 +45,15 @@ const ListCustomerComponent = () => {
         }
         setQuery(getSearch);
       }
+      const handleSearchCriteriaChange = (event) => {
+        setSelectedSearchCriteria(event.target.value);
+        setQuery('');
+        setCustomers(filterdata);
+      };
   return (
     <div className='container'>
       <h2 className="text-center">Customer Management</h2>
-      <Link to ="/add-customer" className="btn btn-primary mb-2">Add Customer</Link>
+     
       <React.Fragment>              
          
       <div className="col-md-12 mt-3 mb-3">
@@ -61,11 +66,23 @@ const ListCustomerComponent = () => {
             onChange={handlesearch}
             placeholder="Search..."
           />
-          <div className="input-group-append">
-            <button className="btn btn-info" onClick={getAllCustomers}>
-              Search
-            </button>
+           <div className="input-group-append">
+            <button className="btn btn-info btn-dark">
+              SearchBy:
+            </button> 
           </div>
+          <select
+              className='form-control'
+              style={{ width: '150px', height: '40px', fontSize: '14px', marginLeft:"20px"}}
+              value={selectedSearchCriteria}
+              onChange={handleSearchCriteriaChange}
+            >
+              <option value='name'>Name</option>
+              <option value='email'>Email Id</option>
+              <option value='phone_no'>Phone Number</option>
+              
+            </select>
+          
         </div>
       </div>
           

@@ -7,15 +7,15 @@ export default props => {
   return (
     <Menu>
     <h3>Login as</h3>
-    <Link className="menu-item" to={`/Customer_bking_rendered`}>
+    <Link className="menu-item" to={`/login`}>
         Customer
       </Link>
 
-      <a className="menu-item" href="/">
+      <Link className="menu-item" to="/employee-repairs">
         Employee
-      </a>
+      </Link>
 
-      <Link className="menu-item" to={`/admin`}>
+      <Link className="menu-item" to={`/Admin_login`}>
         Service provider(Admin)
       </Link>
       

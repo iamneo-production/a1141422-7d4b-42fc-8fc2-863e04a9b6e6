@@ -32,7 +32,7 @@ const ListDeviceComponent = () => {
     }
     const [filterdata, setFilterdata]= useState([]);
      const [query, setQuery] = useState('');
-     
+     const [selectedSearchCriteria, setSelectedSearchCriteria] = useState('brand');
       const handlesearch=(event)=>{
         const getSearch= event.target.value; 
         if(getSearch.length > 0)
@@ -44,6 +44,12 @@ const ListDeviceComponent = () => {
         }
         setQuery(getSearch);
       }
+      
+      const handleSearchCriteriaChange = (event) => {
+        setSelectedSearchCriteria(event.target.value);
+        setQuery('');
+        setDevices(filterdata);
+      };
 
   return (
     <div className="container">
@@ -56,6 +62,22 @@ const ListDeviceComponent = () => {
               <h3 className='mb-3'>Search record Datatable in React Js</h3>                
                 <div className="col-md-6">                
                 <input  type="text" name='name' value={query}   className="form-control" onChange={(e)=>handlesearch(e)} placeholder='Search...' />
+                <div className="input-group-append">
+            <button className="btn btn-info btn-dark">
+              SearchBy:
+            </button> 
+          </div>
+          <select
+              className='form-control'
+              style={{ width: '150px', height: '40px', fontSize: '14px', marginLeft:"20px"}}
+              value={selectedSearchCriteria}
+              onChange={handleSearchCriteriaChange}
+            >
+              <option value='brand'>Brand</option>
+              <option value='type'>Type</option>
+              <option value='model'>Model</option>
+              
+            </select>
               </div>          
             </div>
           
