@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@CrossOrigin("*")
+@CrossOrigin("https://8081-abdabbeccfbbabfcdcbbdbeaabbeaeaadbdbabf.project.examly.io")
 @RestController
 @RequestMapping("/employees")
 public class EmployeeController {
