@@ -130,9 +130,7 @@ const AddRepairComponent = () => {
                 <button className="btn btn-success" onClick={saveRepair}>
                   Submit
                 </button>
-                <Link to="/repairs" className="btn btn-danger">
-                  Cancel
-                </Link>
+               
               </form>
             </div>
           </div>

@@ -1,5 +1,5 @@
 package com.examly.springapp.model;
-import jakarta.persistence.*;
+import javax.persistence.*;
 import lombok.Data;
 @Data
 @Entity

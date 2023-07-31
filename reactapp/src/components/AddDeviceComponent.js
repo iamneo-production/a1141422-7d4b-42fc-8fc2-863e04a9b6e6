@@ -105,7 +105,7 @@ const AddDeviceComponent = () => {
 
                                 </input></div>
                            <button className='btn btn-success' onClick={(e) => saveDevice(e)}>Submit</button>
-                           <Link to="/devices" className='btn btn-danger'>Cancel</Link>
+                           
 
                         </form>
                     </div>

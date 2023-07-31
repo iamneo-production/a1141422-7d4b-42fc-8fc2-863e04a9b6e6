@@ -1,61 +1,48 @@
 package com.examly.springapp.controller;
 
-import net.java.SpringbootBackend.exception.ResourceNotFoundException;
-import net.java.SpringbootBackend.model.Device;
-import net.java.SpringbootBackend.repository.DeviceRepository;
+import com.examly.springapp.service.DeviceService;
+import com.examly.springapp.model.Device;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-@CrossOrigin("*")//
+
+
 @RestController
-@RequestMapping("/api/v1/devices")
+@RequestMapping("/devices")
 public class DeviceController {
     @Autowired
-    private DeviceRepository deviceRepository;
+    private DeviceService deviceService;
+
     @GetMapping
-    public List<Device> getAllDevices(){
-        return deviceRepository.findAll();
+    public List<Device> getAllDevices() {
+        return deviceService.getAllDevices();
     }
 
-// build create device REST API
     @PostMapping
-    public Device createDevice(@RequestBody Device device)
-    {
-        return deviceRepository.save(device);
-
+    public ResponseEntity<Boolean> createDevice(@RequestBody Device device) {
+        deviceService.createDevice(device);
+        return ResponseEntity.ok(true);
     }
+
     @GetMapping("{id}")
-    // build get device by id REST API
-    public ResponseEntity<Device> getDeviceById(@PathVariable long id){
-        Device device=deviceRepository.findById(id)
-                .orElseThrow(()-> new ResourceNotFoundException("Device not exist with id:"+id));
-        return  ResponseEntity.ok(device);
-
+    public ResponseEntity<Device> getDeviceById(@PathVariable long id) {
+        Device device = deviceService.getDeviceById(id);
+        return ResponseEntity.ok(device);
     }
-    //build update device REST API
+
     @PutMapping("{id}")
-    public ResponseEntity<Device> updateDevice(@PathVariable long id,@RequestBody Device deviceDetails){
-        Device updateDevice =deviceRepository.findById(id)
-                .orElseThrow(()->new ResourceNotFoundException("Device not exist with id:"+id));
-        updateDevice.setBrand(deviceDetails.getBrand());
-        updateDevice.setModel(deviceDetails.getModel());
-        updateDevice.setType(deviceDetails.getType());
-
-        deviceRepository.save(updateDevice);
-        return ResponseEntity.ok(updateDevice);
+    public ResponseEntity<Device> updateDevice(@PathVariable long id, @RequestBody Device deviceDetails) {
+        Device updatedDevice = deviceService.updateDevice(id, deviceDetails);
+        return ResponseEntity.ok(updatedDevice);
     }
+
     @DeleteMapping("{id}")
-    //build delete device REST API
-    public ResponseEntity<HttpStatus> deleteEmployee(@PathVariable long id){
-        Device device =deviceRepository.findById(id)
-                .orElseThrow(()->new ResourceNotFoundException("Device not exist with id:"+id));
-                deviceRepository.delete(device);
-
-                return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+    public ResponseEntity<Device> deleteDevice(@PathVariable long id) {
+        Device device=deviceService.getDeviceById(id);
+        deviceService.deleteDevice(id);
+        return ResponseEntity.ok(device);
     }
-
 }
-
