@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const EMPLOYEE_BASE_REST_API_URL='http://localhost:8080/employees';
+const EMPLOYEE_BASE_REST_API_URL='https://8080-adcaafbabeaaefafeabfcdcbbdbeaabbeaeaadbdbabf.project.examly.io/employees';
 
 class EmployeeService{
     getAllEmployees(){
