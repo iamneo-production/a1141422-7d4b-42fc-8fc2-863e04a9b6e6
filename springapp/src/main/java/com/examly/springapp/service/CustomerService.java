@@ -1,46 +1,45 @@
 package com.examly.springapp.service;
 
 import com.examly.springapp.exception.ResourceNotFoundException;
-import com.examly.springapp.model.Employee;
-import com.examly.springapp.repository.EmployeeRepository;
+import com.examly.springapp.model.Customer;
+import com.examly.springapp.repository.CustomerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
-public class EmployeeService {
-    private final EmployeeRepository employeeRepository;
+public class CustomerService {
+    private final CustomerRepository customerRepository;
 
     @Autowired
-    public EmployeeService(EmployeeRepository employeeRepository) {
-        this.employeeRepository = employeeRepository;
+    public CustomerService(CustomerRepository customerRepository) {
+        this.customerRepository = customerRepository;
     }
 
-    public List<Employee> getAllEmployees() {
-        return employeeRepository.findAll();
+    public List<Customer> getAllCustomers() {
+        return customerRepository.findAll();
     }
 
-    public Employee getEmployeeById(Long employeeId) {
-        return employeeRepository.findById(employeeId)
-                .orElseThrow(() -> new ResourceNotFoundException("Employee not exist with id:"+ employeeId));
+    public Customer getCustomerById(Long customerId) {
+        return customerRepository.findById(customerId)
+                .orElseThrow(() -> new ResourceNotFoundException("Customer not exist with id:"+customerId));
     }
 
-    public Employee createEmployee(Employee employee) {
-        return employeeRepository.save(employee);
+    public Customer createCustomer(Customer customer) {
+        return customerRepository.save(customer);
     }
 
-    public Employee updateEmployee(Long employeeId, Employee employeeDetails) {
-        Employee employee = getEmployeeById(employeeId);
-        employee.setName(employeeDetails.getName());
-        employee.setEmailId(employeeDetails.getEmailId());
-        employee.setPhn(employeeDetails.getPhn());
-        employee.setAct(employeeDetails.getAct());
+    public Customer updateCustomer(Long customerId, Customer customerDetails) {
+        Customer customer = getCustomerById(customerId);
+        customer.setName(customerDetails.getName());
+        customer.setEmail(customerDetails.getEmail());
+        customer.setPhone(customerDetails.getPhone());
         // Update other fields as needed
-        return employeeRepository.save(employee);
+        return customerRepository.save(customer);
     }
 
-    public void deleteEmployee(Long employeeId) {
-        employeeRepository.deleteById(employeeId);
+    public void deleteCustomer(Long customerId) {
+        customerRepository.deleteById(customerId);
     }
 }

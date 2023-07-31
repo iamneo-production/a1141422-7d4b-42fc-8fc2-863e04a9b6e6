@@ -1,12 +1,14 @@
 package com.examly.springapp.service;
+
 import com.examly.springapp.exception.ResourceNotFoundException;
-import com.examly.springapp.model.Repair;
 import com.examly.springapp.model.Customer;
 import com.examly.springapp.model.Device;
+import com.examly.springapp.model.Repair;
 import com.examly.springapp.model.RepairRequest;
 import com.examly.springapp.repository.RepairRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
 import java.util.ArrayList;
 import java.util.List;
 

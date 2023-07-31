@@ -21,11 +21,8 @@ public class Customer {
 
     @Column(name = "name")
     private String name;
-
     @Column(name = "email")
     private String email;
-
     @Column(name = "phone")
     private String phone;
-    
 }

@@ -1,10 +1,12 @@
 package com.examly.springapp.model;
 
-import jakarta.persistence.*;
+
+import javax.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+
 
 @Getter
 @Setter
@@ -13,11 +15,11 @@ import lombok.Setter;
 @Entity
 @Table(name ="devices")
 
-
 public class Device {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+   @Column(name="id")
+
     private long id;
 
     @Column(name="brand")
@@ -28,4 +30,5 @@ public class Device {
 
     @Column(name="model")
     private String model;
+
 }
