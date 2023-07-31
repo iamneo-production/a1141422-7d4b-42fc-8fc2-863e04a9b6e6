@@ -1,10 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useParams, useNavigate } from 'react-router-dom';
 import RepairService from '../services/RepairService';
+import NavBar from './CustomerBooking/NavBar';
+
+
 
 const AddRepairComponent = () => {
-  const [customer, setCustomer] = useState('');
-  const [device, setDevice] = useState('');
+  const [repName, setRepName] = useState('');
+  const [custId, setCustId] = useState('');
+  const [deviceId, setDeviceId] = useState('');
   const [des, setDes] = useState('');
   const [status, setStatus] = useState('');
 
@@ -13,7 +17,9 @@ const AddRepairComponent = () => {
 
   const saveRepair = (e) => {
     e.preventDefault();
-    const repair = { customer, device, des, status };
+    const customer = { id: custId };
+    const devices = deviceId.split(',').map((id) => ({ id: id.trim() }));
+    const repair = { repName, customer, device:devices.map((device) => ({ id: device.id })), des, status };
     if (id) {
       RepairService.updateRepair(id, repair)
         .then((response) => {
@@ -26,7 +32,7 @@ const AddRepairComponent = () => {
       RepairService.createRepair(repair)
         .then((response) => {
           console.log(response.data);
-          navigate('/repairs');
+          navigate('/');
         })
         .catch((error) => {
           console.log(error);
@@ -38,8 +44,9 @@ const AddRepairComponent = () => {
     if (id) {
       RepairService.getRepairById(id)
         .then((response) => {
-          setCustomer(response.data.customer);
-          setDevice(response.data.device);
+          setRepName(response.data.repName);
+          setCustId(response.data.customer.id);
+          setDeviceId(response.data.devices.map((device) => device.id).join(', '));
           setDes(response.data.des);
           setStatus(response.data.status);
         })
@@ -50,72 +57,80 @@ const AddRepairComponent = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const title = id ? 'Update Repair' : 'Add Repair';
+  const title = id ? 'Update Repair' : 'Book a New Repair Service !';
 
   return (
     <div>
+      <NavBar></NavBar>
       <br />
-      <div className="container">
+      <div className="repair">
         <div className="row">
-          <div className="card col-md-6 offset-md-3 offset-md-3">
-            <h2 className="text-center">{title}</h2>
-            <div className="card-body">
+          <div className=" col-md-8 offset-md-3 offset-md-3">
+            <h1 className="text-center">{title}</h1>
+            <div className="body-md-8">
               <form>
-                {/* <div className="form-group mb-2">
-                  <label className="form-label">Repair Name:</label>
+                <div className="form-group mb-2">
+                
+                  <label className="form-label"><h3>Repair Name:</h3></label>
+                  
                   <input
                     type="text"
+                    
                     placeholder="Enter repair name"
                     name="repName"
-                    className="form-control"
+                    className="form-control form-control-lg"
                     value={repName}
                     onChange={(e) => setRepName(e.target.value)}
                     required
                   />
-                </div> */}
+                </div>
+                
                 <div className="form-group mb-2">
-                  <label className="form-label">Customer</label>
+                  <label className="form-label"><h3>Customer ID:</h3></label>
                   <input
                     type="text"
-                    placeholder="Enter customer "
-                    name="customer"
-                    className="form-control"
-                    value={customer}
-                    onChange={(e) => setCustomer(e.target.value)}
+                    placeholder="Enter customer ID"
+                    name="custId"
+                    className="form-control form-control-lg"
+                    value={custId}
+                    onChange={(e) => setCustId(e.target.value)}
                     required
                   />
                 </div>
+                
                 <div className="form-group mb-2">
-                  <label className="form-label">Device:</label>
+                  <label className="form-label"><h3>Device ID:</h3></label>
                   <input
                     type="text"
-                    placeholder="Enter device"
-                    name="device"
-                    className="form-control"
-                    value={device}
-                    onChange={(e) => setDevice(e.target.value)}
+                    placeholder="Enter device ID"
+                    name="deviceId"
+                    className="form-control form-control-lg"
+                    value={deviceId}
+                    onChange={(e) => setDeviceId(e.target.value)}
                     required
                   />
                 </div>
+                
                 <div className="form-group mb-2">
-                  <label className="form-label">Description:</label>
+                  <label className="form-label"><h3>Description:</h3></label>
                   <input
                     type="text"
                     placeholder="Enter description"
                     name="des"
-                    className="form-control"
+                    className="form-control form-control-lg"
                     value={des}
                     onChange={(e) => setDes(e.target.value)}
                     required
                   />
                 </div>
+                
                 <div className="form-group mb-2">
-                  <label className="form-label">Status:</label>
+                  <label className="form-label"><h3>Status:</h3></label>
                   <input
                     type="text"
                     placeholder="Enter status"
                     list="browsers" name="myStatus"
-                    className="form-control"
+                    className="form-control form-control-lg"
                     value={status}
                     onChange={(e) => setStatus(e.target.value)}
                     required
@@ -130,7 +145,8 @@ const AddRepairComponent = () => {
                 <button className="btn btn-success" onClick={saveRepair}>
                   Submit
                 </button>
-               
+                 &emsp;&emsp;
+                
               </form>
             </div>
           </div>

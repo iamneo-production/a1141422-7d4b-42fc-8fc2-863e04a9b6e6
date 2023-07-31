@@ -25,7 +25,7 @@ const AddCustomerComponent = () => {
          else{
          CustomerService.createCustomer(customer).then((response)=>{
             console.log(response.data);
-            navigate('/customers')
+            navigate('/register')
         }).catch(error=>{
             console.log(error)
            
