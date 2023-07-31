@@ -19,7 +19,7 @@ const Carousel = ({ images }) => {
     <>
     <HeaderComponent/>
     <Sidebar />
-    <div className="carousel">
+    <div className="carousel my-5">
       <button className="carousel__button" onClick={handlePrevious}>
         &lt;
       </button>
@@ -35,6 +35,9 @@ const Carousel = ({ images }) => {
         &gt;
       </button>
     </div>
+    <div className="comtainer my-5">
+          
+        </div>
     </>
   );
 };
