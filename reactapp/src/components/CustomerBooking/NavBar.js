@@ -5,7 +5,7 @@ export default function NavBar() {
     <div className='row top_header2'>
       <header>
         <nav className='navbar navbar-expand-md'>
-            <div style={{textAlign : 'left', height : '50px', width : '110%',paddingLeft: '30px',}}>
+            <div style={{textAlign : 'left', height : '50px', width : '110%',paddingLeft: '500px',}}>
             
             <h1>  AC REPAIR :  CUSTOMER'S  DESK</h1>
             </div>
