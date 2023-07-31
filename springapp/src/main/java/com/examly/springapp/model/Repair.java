@@ -1,10 +1,11 @@
-
 package com.examly.springapp.model;
+
 import javax.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,7 +17,8 @@ import java.util.List;
 @Table(name = "repairs")
 public class Repair {
     @Id
-    @Column(name="id")
+     @Column(name="id")
+   // @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     @Column(name="repair_name")
     private  String repName;

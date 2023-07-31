@@ -25,12 +25,40 @@ public class RepairController {
     @Autowired
     private RepairService repairService;
 
-
+//    @GetMapping
+//    public List<Repair> getAllRepairs(){
+//        return repairRepository.findAll();
+//    }
     @GetMapping
     public List<Repair> getAllRepairs() {
         return repairService.getAllRepairs();
     }
-   
+    // build create employee REST API
+//
+
+//    @PostMapping
+//    public ResponseEntity<Repair> createRepair(@RequestBody RepairRequest repairRequest) {
+//        Repair repair = new Repair();
+//        repair.setId(repairRequest.getId());
+//        repair.setRepName(repairRequest.getRepName());
+//
+//        Customer customer = new Customer();
+//        customer.setId(repairRequest.getCustomer().getId());
+//        repair.setCustomer(customer);
+//
+//        List<Device> deviceList = new ArrayList<>();
+//        for (RepairRequest.DeviceRequest deviceRequest : repairRequest.getDeviceList()) {
+//            Device device1 = new Device();
+//            device1.setId(deviceRequest.getId());
+//            deviceList.add(device1);
+//        }
+//        repair.setDevice(deviceList);
+//        repair.setDes(repairRequest.getDes());
+//        repair.setStatus(repairRequest.getStatus());
+//        Repair savedRepair = repairRepository.save(repair);
+//        return new ResponseEntity<>(savedRepair, HttpStatus.CREATED);
+//    }
+
     @PostMapping
     public ResponseEntity<Repair> createRepair(@RequestBody RepairRequest repairRequest) {
         Repair repair = repairService.createRepair(repairRequest);
@@ -42,6 +70,29 @@ public class RepairController {
         Repair repair = repairService.updateRepair(id,repairRequest);
         return ResponseEntity.ok(repair);
     }
+//    @PutMapping("{id}")
+//    public ResponseEntity<Repair> updateRepair(@PathVariable int id,@RequestBody RepairRequest repairRequest) {
+//        Repair repair = repairRepository.findById(id)
+//                .orElseThrow(() -> new ResourceNotFoundException("Employee not exist with id:" + id));
+//        repair.setRepName(repairRequest.getRepName());
+//        Customer customer = new Customer();
+//        customer.setId(repairRequest.getCustomer().getId());
+//        repair.setCustomer(customer);
+//
+//        List<Device> deviceList = new ArrayList<>();
+//        for (RepairRequest.DeviceRequest deviceRequest : repairRequest.getDeviceList()) {
+//            Device device1 = new Device();
+//            device1.setId(deviceRequest.getId());
+//            deviceList.add(device1);
+//        }
+//        repair.setDevice(deviceList);
+//        repair.setDes(repairRequest.getDes());
+//        repair.setStatus(repairRequest.getStatus());
+//
+//        Repair updateRepair = repairRepository.save(repair);
+//        return new ResponseEntity<>(updateRepair, HttpStatus.CREATED);
+//    }
+
 
 
     @GetMapping("{id}")
