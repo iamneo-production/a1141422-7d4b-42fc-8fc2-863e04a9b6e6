@@ -29,7 +29,9 @@ public class CustomerService {
     public Customer createCustomer(Customer customer) {
         return customerRepository.save(customer);
     }
-
+    public Customer getCustomerByEmail(String CustomerEmail) {
+        return customerRepository.findByEmail(CustomerEmail);
+    }
     public Customer updateCustomer(Long customerId, Customer customerDetails) {
         Customer customer = getCustomerById(customerId);
         customer.setName(customerDetails.getName());

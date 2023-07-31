@@ -1,5 +1,5 @@
 import axios from 'axios';
-const API_BASE_URL = 'http://localhost:8080';
+const API_BASE_URL = 'https://8080-fabdbbbdadfdcdabfcdcbbdbeaabbeaeaadbdbabf.project.examly.io';
 const EmployeeRepairMappingService = {
   getAllEmployeeMappings: () => {
     return axios.get(API_BASE_URL+'/api/employeeRepairMapping');
