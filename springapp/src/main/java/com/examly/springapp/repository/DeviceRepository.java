@@ -9,4 +9,3 @@ public interface DeviceRepository extends JpaRepository <Device,Long> {
     //all curd database methods
 
 }
-
