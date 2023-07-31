@@ -1,9 +1,9 @@
 package com.examly.springapp.service;
 
 
-import net.java.SpringbootBackend.exception.ResourceNotFoundException;
-import net.java.SpringbootBackend.model.Device;
-import net.java.SpringbootBackend.repository.DeviceRepository;
+import com.examly.springapp.exception.ResourceNotFoundException;
+import com.examly.springapp.model.Device;
+import com.examly.springapp.repository.DeviceRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
