@@ -8,7 +8,7 @@ import "./Style.css"
 
 const Charts_render = () => {
   return (
-    <div className="App">
+    <div className="App1">
 
       <h1>Charts</h1>
 

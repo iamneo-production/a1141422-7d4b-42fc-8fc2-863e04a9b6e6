@@ -1,12 +1,19 @@
-/* eslint-disable jsx-a11y/img-redundant-alt */
 import React from 'react';
-import { FaTools, FaWrench, FaCogs, FaTint, FaClipboardCheck, FaExclamationTriangle } from 'react-icons/fa'; 
+import { FaTools, FaWrench, FaCogs, FaTint, FaClipboardCheck, FaExclamationTriangle,FaUserTie,FaCheck,FaClock,FaCheckCircle, FaHeadset, FaHandHoldingUsd} from 'react-icons/fa';
+import Happy from './Happy.png'
 import '../../css/home.css'; // Import the CSS file for styling
 import PC from './PC.jpg';
 import PC1 from './pc1.png';
 import PC2 from './pc2.png';
 import PC3 from './pc3.png';
 import Carousel from '../../components/Carousel';
+import data from './data.json'
+import AboutUs from './AboutUs.jpg'
+import img from './img.jpg'
+import testimonial3 from './testimonial3.jpg'
+import { BsFillPeopleFill } from 'react-icons/bs';
+import FooterComponent from '../../components/FooterComponent';
+
 const Home = () => {
 
   const acImages = [
@@ -19,7 +26,7 @@ const Home = () => {
   return (
     <div className="welcome-page">    
       <Carousel images={acImages} />
-      <div className="service-box">
+      <div className="service-box my-5">
         <h1>SERVICES AVAILABLE</h1><br></br>
         <div className="row">
         <div className="rectangle">
@@ -56,6 +63,7 @@ const Home = () => {
         </div>
       </div>
       </div>
+      
       <div id='testimonials'>
       <div className='container'>
         <div className='section-title text-center'>
@@ -100,7 +108,8 @@ const Home = () => {
           <h3>Active Employees</h3>
         </div>
         </div>
-      </div>
+        </div>
+
     <div id='about'>
       <div className='container'>
         <div className='row'>
@@ -117,6 +126,7 @@ const Home = () => {
         </div>
       </div>
     </div>
+
     <div className="container">
         <h2 className="section-title">Why Choose Us</h2>
         <div className="row">
@@ -170,8 +180,11 @@ const Home = () => {
           </div>
         </div>
       </div>
+      
+      <FooterComponent/>
     </div>
   );
 };
+
 
 export default Home;

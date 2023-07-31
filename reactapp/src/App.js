@@ -12,14 +12,14 @@ import AddCustomerComponent from './components/AddCustomerComponent';
 import ListCustomerComponent from './components/ListCustomerComponent';
 import ListDeviceComponent from './components/ListDeviceComponent';
 import AddDeviceComponent from './components/AddDeviceComponent';
-import ComplainForm from './components/CustomerBooking/ComplainForm';
+// import ComplainForm from './components/CustomerBooking/ComplainForm';
 //import CustomerAbout from './components/CustomerBooking/CustomerAbout';
 import Customer_bking_rendered from './components/CustomerBooking/Customer_bking_rendered';
 import Register from "./components/Login_register/Register";
 import Login from "./components/Login_register/Login";
 import Admin_Login from "./components/Login_register/Admin_Login";
 import AboutUs from './components/AboutUs';
-import AddOrderComponent from './components/AddOrderComponent';
+// import AddOrderComponent from './components/AddOrderComponent';
 import ListDeviceComponent_2 from './components/ListDeviceComponent_2';
 import Customer_help from './components/CustomerBooking/Customer_help';
 import AssignRepairIdComponent from './components/AssignRepairIdComponent';
@@ -48,13 +48,13 @@ function App() {
       <Route path = "/add-device" element = {<AddDeviceComponent/>} ></Route>
       <Route path="/edit-device/:id" element={<AddDeviceComponent/>}></Route>
       <Route path="/Customer_bking_rendered/:id" element={<Customer_bking_rendered/>}></Route>
-      <Route path="/ComplainForm" element={<ComplainForm/>}></Route>
+      {/* <Route path="/ComplainForm" element={<ComplainForm/>}></Route> */}
       
       <Route path="/AboutUs" element= { <AboutUs/>}  />
       <Route path="/register" element= { <Register/>}  /> 
       <Route path="/login" element= { <Login/>} />
       <Route path="/Admin_login" element={<Admin_Login/>}></Route>
-      <Route path="/addorder/:customerId/:deviceId" element={<AddOrderComponent/>}></Route>
+      {/* <Route path="/addorder/:customerId/:deviceId" element={<AddOrderComponent/>}></Route> */}
       <Route path = "/devices_2" element = {<ListDeviceComponent_2/>}></Route>
       <Route path = "/Customer_help" element = {<Customer_help/>}></Route>
       <Route  path="/assign-repair-id/:id" element={<AssignRepairIdComponent/>} />

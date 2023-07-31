@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import '../css/Carousel.css';
+import HeaderComponent from './HeaderComponent';
+import Sidebar from './Sidebar.js';
 
 const Carousel = ({ images }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -14,7 +16,10 @@ const Carousel = ({ images }) => {
   };
 
   return (
-    <div className="carousel">
+    <>
+    <HeaderComponent/>
+    <Sidebar />
+    <div className="carousel my-5">
       <button className="carousel__button" onClick={handlePrevious}>
         &lt;
       </button>
@@ -30,6 +35,10 @@ const Carousel = ({ images }) => {
         &gt;
       </button>
     </div>
+    <div className="comtainer my-5">
+          
+        </div>
+    </>
   );
 };
 
