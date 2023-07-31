@@ -14,7 +14,7 @@ function Register() {
     async function save(event) {
         event.preventDefault();
         try {
-          await axios.post("http://localhost:8080/api/v1/custmlogin/save", {
+          await axios.post("https://8080-eafabcbdbecabfcdcbbdbeaabbeaeaadbdbabf.project.examly.io/api/v1/custmlogin/save", {
           employeename: employeename,
           email: email,
           password: password,

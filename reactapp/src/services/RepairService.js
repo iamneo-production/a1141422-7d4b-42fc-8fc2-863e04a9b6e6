@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const REPAIR_BASE_REST_API_URL='http://localhost:8080/repairs';
+const REPAIR_BASE_REST_API_URL='https://8080-eafabcbdbecabfcdcbbdbeaabbeaeaadbdbabf.project.examly.io/repairs';
 class RepairService{
     getAllRepairs(){
         return axios.get(REPAIR_BASE_REST_API_URL)

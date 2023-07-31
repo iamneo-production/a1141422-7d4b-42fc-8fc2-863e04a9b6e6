@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@CrossOrigin("*")
+@CrossOrigin("https://8081-eafabcbdbecabfcdcbbdbeaabbeaeaadbdbabf.project.examly.io")
 @RestController
 @RequestMapping("/devices")
 public class DeviceController {

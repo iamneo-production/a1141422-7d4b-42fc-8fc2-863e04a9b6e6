@@ -38,7 +38,9 @@ public class CustomerService {
         // Update other fields as needed
         return customerRepository.save(customer);
     }
-
+    public Customer getCustomerByEmail(String CustomerEmail) {
+        return customerRepository.findByEmail(CustomerEmail);
+    }
     public void deleteCustomer(Long customerId) {
         customerRepository.deleteById(customerId);
     }
