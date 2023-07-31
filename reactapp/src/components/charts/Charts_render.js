@@ -3,7 +3,7 @@ import RepairVolumeChart from "./RepairVolumeChart";
 import EmployeeProductivityChart from "./EmployeeProductivityChart";
 import CustomerSatisfactionChart from "./CustomerSatisfactionChart";
 import ExportToPDFButton from "./ExportToPDFButton";
-import html2pdf from "html2pdf.js";
+//import html2pdf from "html2pdf.js";
 import "./Style.css"
 
 const Charts_render = () => {
