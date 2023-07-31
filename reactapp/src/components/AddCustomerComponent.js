@@ -100,7 +100,7 @@ const AddCustomerComponent = () => {
                        
                         <h2> After you submit, you will be redirected for 2nd step registration </h2>
                         <button className='btn btn-success' onClick={(e)=>saveCustomer(e)}>Submit</button>
-                        <Link to="/customers" className='btn btn-danger'>Cancel</Link>
+                        
                     </form>
                 </div>
             </div>

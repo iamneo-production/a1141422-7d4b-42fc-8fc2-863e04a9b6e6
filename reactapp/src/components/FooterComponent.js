@@ -28,7 +28,8 @@ const FooterComponent = () => {
                 <h3 className='text-black'>About Us</h3>
                 <hr className='bg-black'></hr>
                 <p className='text-black pr-5' style={{ textAlign: 'left' }}>
-                  The AC REPAIR PORTAL, the one-stop solution for you to book repairing of your AC or its franchise partner. We therefore guarantee our product to be 100% genuine. 
+                  The AC REPAIR PORTAL, the one-stop solution for you to book repairing of your AC or its franchise partner.
+                   We therefore guarantee our product to be 100% genuine. 
                 </p>
               </div>
             </div>
