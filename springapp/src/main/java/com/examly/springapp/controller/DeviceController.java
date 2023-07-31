@@ -1,8 +1,8 @@
 package com.examly.springapp.controller;
 
-import net.java.SpringbootBackend.exception.ResourceNotFoundException;
-import net.java.SpringbootBackend.model.Device;
-import net.java.SpringbootBackend.repository.DeviceRepository;
+import com.examly.springapp.exception.ResourceNotFoundException;
+import com.examly.springapp.model.Device;
+import com.examly.springapp.repository.DeviceRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 @CrossOrigin("*")//
 @RestController
-@RequestMapping("/api/v1/devices")
+@RequestMapping("/devices")
 public class DeviceController {
     @Autowired
     private DeviceRepository deviceRepository;
