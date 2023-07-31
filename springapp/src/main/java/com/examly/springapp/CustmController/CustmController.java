@@ -2,14 +2,14 @@ package com.examly.springapp.CustmController;
 
 import com.examly.springapp.Dto.CustmDTO;
 import com.examly.springapp.Dto.LoginDTO;
-import com.examly.springapp.Service.CustmLoginService;
+import com.examly.springapp.service.CustmLoginService;
 import com.examly.springapp.response.LoginResponse2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@CrossOrigin
+@CrossOrigin("*")
 @RequestMapping("api/v1/custmlogin")
 public class CustmController {
 

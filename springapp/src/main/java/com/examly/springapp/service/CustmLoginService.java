@@ -1,4 +1,4 @@
-package com.examly.springapp.Service;
+package com.examly.springapp.service;
 
 import com.examly.springapp.Dto.CustmDTO;
 import com.examly.springapp.Dto.LoginDTO;

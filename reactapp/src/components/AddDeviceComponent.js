@@ -24,8 +24,8 @@ const AddDeviceComponent = () => {
         }else{
           DeviceService.createDevice(device).then((response) =>{
             console.log(response.data)  
-    
-             navigate('/devices');
+            navigate(`/Customer_bking_rendered/${id}`)
+             
             }).catch(error => {
               console.log(error);
             })
@@ -105,7 +105,7 @@ const AddDeviceComponent = () => {
 
                                 </input></div>
                            <button className='btn btn-success' onClick={(e) => saveDevice(e)}>Submit</button>
-                           <Link to="/devices" className='btn btn-danger'>Cancel</Link>
+                           
 
                         </form>
                     </div>

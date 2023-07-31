@@ -1,5 +1,5 @@
 package com.examly.springapp.controller;
-import com.examly.springapp.Service.EmployeeRepairMappingService;
+import com.examly.springapp.service.EmployeeRepairMappingService;
 import com.examly.springapp.model.EmployeeRepairMapping;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
