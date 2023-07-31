@@ -21,6 +21,10 @@ public class CustomerService {
         return customerRepository.findAll();
     }
 
+    public Customer getCustomerByEmail(String CustomerEmail) {
+        return customerRepository.findByEmail(CustomerEmail);
+    }
+    
     public Customer getCustomerById(Long customerId) {
         return customerRepository.findById(customerId)
                 .orElseThrow(() -> new ResourceNotFoundException("Customer not exist with id:"+customerId));

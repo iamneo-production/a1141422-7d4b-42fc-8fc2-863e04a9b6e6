@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@CrossOrigin("*")
+@CrossOrigin("https://8081-bffbfaadfabfcdcbbdbeaabbeaeaadbdbabf.project.examly.io")
 @RestController
 @RequestMapping("/customers")
 public class CustomerController {
@@ -33,6 +33,11 @@ public class CustomerController {
  @GetMapping("{id}")
     public ResponseEntity<Customer> getCustomerById(@PathVariable long id) {
         Customer customer = customerService.getCustomerById(id);
+        return ResponseEntity.ok(customer);
+    }
+    @GetMapping("/email/{email}")
+    public ResponseEntity<Customer> getCustomerByEmail(@PathVariable String email) {
+        Customer customer = customerService.getCustomerByEmail(email);
         return ResponseEntity.ok(customer);
     }
 
