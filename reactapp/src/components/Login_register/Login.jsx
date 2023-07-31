@@ -14,7 +14,7 @@ function Login() {
     async function login(event) {
         event.preventDefault();
         try {
-          await axios.post("http://localhost:8080/api/v1/custmlogin/login", {
+          await axios.post("https://8080-edffbeaeddeabfcdcbbdbeaabbeaeaadbdbabf.project.examly.io/api/v1/custmlogin/login", {
             email: email,
             password: password,
             }).then((res) => 
@@ -30,7 +30,7 @@ function Login() {
               const customerEmail = res.data.email;
               console.log(customerEmail);
                 // Get customer ID using customerEmail
-                axios.get(`http://localhost:8080/customers/email/${customerEmail}`)
+                axios.get(`https://8080-edffbeaeddeabfcdcbbdbeaabbeaeaadbdbabf.project.examly.io/customers/email/${customerEmail}`)
                   .then((response) => {
                     const customerId = response.data.id;
                     // Use the customer ID as needed
