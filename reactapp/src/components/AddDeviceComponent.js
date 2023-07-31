@@ -24,8 +24,8 @@ const AddDeviceComponent = () => {
         }else{
           DeviceService.createDevice(device).then((response) =>{
             console.log(response.data)  
-    
-             navigate('/devices');
+            navigate(`/Customer_bking_rendered/${id}`)
+             
             }).catch(error => {
               console.log(error);
             })
