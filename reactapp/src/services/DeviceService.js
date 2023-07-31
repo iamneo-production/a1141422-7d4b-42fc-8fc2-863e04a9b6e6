@@ -1,5 +1,5 @@
 import axios from "axios";
-const DEVICE_BASE_REST_API_URL ="http://localhost:8080/devices";
+const DEVICE_BASE_REST_API_URL ="https://8080-bffcdaefabfcdcbbdbeaabbeaeaadbdbabf.project.examly.io/devices";
 
 class DeviceService{
     getAllDevices(){

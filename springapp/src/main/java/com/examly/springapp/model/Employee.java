@@ -14,8 +14,7 @@ import javax.persistence.*;
 public class Employee {
 
         @Id
-    
-        @Column(name = "id")
+        @GeneratedValue(strategy = GenerationType.IDENTITY)
         private long id;
 
         @Column(name = "name")
