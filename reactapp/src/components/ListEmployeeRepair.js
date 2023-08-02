@@ -10,7 +10,7 @@ function ListEmployeeRepair() {
     useEffect(()=>{
       getAllEmployeeRepairs();
     },[])
-    
+     
     const getAllEmployeeRepairs = async () => {
         EmployeeRepairMappingService.getAllEmployeeMappings().then((response)=>{
           setEmployeeRepairs(response.data)  

@@ -9,7 +9,7 @@ import AddRepairComponent from './components/AddRepairComponent';
 import AdminMainPage from './components/AdminMainPage';
 import Home from './pages/home/Home.js'
 import AddCustomerComponent from './components/AddCustomerComponent';
-import ListCustomerComponent from './components/ListCustomerComponent';
+import ListCustomerComponent from './components/ListCustomerComponent'; 
 import ListDeviceComponent from './components/ListDeviceComponent';
 import AddDeviceComponent from './components/AddDeviceComponent';
 // import ComplainForm from './components/CustomerBooking/ComplainForm';

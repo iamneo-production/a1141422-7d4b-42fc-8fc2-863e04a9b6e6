@@ -7,7 +7,7 @@ const ListCustomerComponent = () => {
     const [customers,setCustomers]=useState([])
     useEffect(()=>{
       getAllCustomers();
-    
+     
     },[])
     const getAllCustomers=()=>{
         CustomerService.getAllCustomers().then((response)=>{

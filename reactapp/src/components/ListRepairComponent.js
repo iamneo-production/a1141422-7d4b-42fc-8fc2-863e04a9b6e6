@@ -9,7 +9,7 @@ const ListRepairComponent = () => {
     getAllRepairs();
     
   }, []);
-
+ 
   const getAllRepairs = () => {
     RepairService.getAllRepairs()
       .then((response) => {

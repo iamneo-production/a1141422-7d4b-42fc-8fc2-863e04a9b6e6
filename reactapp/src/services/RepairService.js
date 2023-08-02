@@ -22,4 +22,4 @@ class RepairService{
 
 }
 // eslint-disable-next-line 
-export default new RepairService(); 
+export default new RepairService();  

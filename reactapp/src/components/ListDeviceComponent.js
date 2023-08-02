@@ -8,7 +8,7 @@ const ListDeviceComponent = () => {
     useEffect(() => {
        
         getAllDevices();
-  
+   
     }, [])
      const getAllDevices =() => {
         DeviceService.getAllDevices().then((Response) => {

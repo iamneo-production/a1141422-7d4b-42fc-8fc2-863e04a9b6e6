@@ -11,7 +11,7 @@
     transition: height 0.3s ease-in-out;
     overflow: hidden;
   }
-  
+   
   .footer.expanded {
     height: 450px;
     overflow: auto;

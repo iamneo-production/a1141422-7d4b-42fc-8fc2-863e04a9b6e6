@@ -23,4 +23,4 @@ class EmployeeService{
 
 }
 // eslint-disable-next-line 
-export default new EmployeeService(); 
+export default new EmployeeService();  

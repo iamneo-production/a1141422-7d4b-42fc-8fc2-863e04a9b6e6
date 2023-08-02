@@ -10,7 +10,7 @@
     justify-content: space-between;
     margin-bottom: 20px; /* Add margin-bottom to create space between rows */
     /*flex-wrap: wrap; Wrap items onto new lines */
-  }
+  } 
   .row1 {
     display: flex;
     margin-bottom: 20px; /* Add margin-bottom to create space between rows */
